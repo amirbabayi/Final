@@ -4,9 +4,9 @@ import ReactDOM from "react-dom";
 // import BigChart from "./bigChart";
 // import LineDemo from "./chart";
 // import ChartDoughnut from "./chart1";
-import ChartBar from "./chart2";
+// import ChartBar from "./chart2";
 // import ChartBar2 from "./chart3"; 
-import LineChart from "./chart4";
+// import LineChart from "./chart4";
 
 import Grid from "@material-ui/core/Grid";
 import Variants from "./Components/card2";
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div>
         hello
-        {/* <Grid container>
+        <Grid container>
           <PersistentDrawerLeft />
         </Grid>
       <Grid item container>
@@ -36,16 +36,14 @@ class App extends Component {
         <Grid container style={{ padding: "20px 0 20px 32px" }}>
           <Variants />
         </Grid> 
-         <Grid container style={{ padding: "20px 40px 20px 40px" }}> */}
-          {/* <Grid item container lg={4}>
+         <Grid container style={{ padding: "20px 40px 20px 40px" }}>
+          <Grid item container lg={4}>
             <FolderList />
           </Grid>
           <Grid item container lg={8}>
             <CustomizedTables />
-          </Grid> */}
-        {/* </Grid>  */}
-        <ChartBar />
-        <LineChart />
+          </Grid>
+        </Grid> 
       </div>
     );
   }
