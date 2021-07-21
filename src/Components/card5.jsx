@@ -47,23 +47,39 @@ const useStyles = makeStyles({
     color: "white",
     padding: "7px 15px",
     textTransform: "capitalize",
+    "&:hover":{
+      backgroundColor: "#ff5407 ",
+    }
+    
   },
   colorButton: {
     backgroundColor: "#ebf5f5",
     color: "black",
     padding: "10px 0",
+    "&:hover":{
+      backgroundColor: "#dfffff ",
+    }
   },
   tomato: {
     color: "white",
     backgroundColor: "#ff4133",
+    "&:hover":{
+      backgroundColor: "#ff2e00 ",
+    }
   },
   green: {
     color: "white",
     backgroundColor: green[500],
+    "&:hover":{
+      backgroundColor: "#40d446 ",
+    }
   },
   blue: {
     color: "white",
     backgroundColor: blue[500],
+    "&:hover":{
+      backgroundColor: "#46adff ",
+    }
   },
 });
 

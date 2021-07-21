@@ -105,7 +105,7 @@ export default function FolderList() {
           <Grid item container alignItems="center" justify='flex-start' lg={2} style={{}}>
             <Avatar className={item.color}>{item.icon}</Avatar>
           </Grid>
-          <Grid item container alignItems="center" justify='flex-start' lg={6} style={{fontWeight:600,fontSize:16}}>
+          <Grid item container alignItems="center" justify='flex-start' lg={6} style={{fontWeight:600,fontSize:16,color:"black"}}>
             {item.title}
             <div style={{textAlign:"center",fontWeight:400,fontSize:12,paddingTop:10,color:"#a3a3a3"}}>
               {item.note}
