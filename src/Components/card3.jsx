@@ -13,6 +13,7 @@ import LoyaltyIcon from "@material-ui/icons/Loyalty";
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import Avatar from "@material-ui/core/Avatar";
 import List from "@material-ui/core/List";
+import DoubleLineChart from "./../bigChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,9 +34,9 @@ const useStyles = makeStyles((theme) => ({
     padding: 16,
     marginTop: 25,
     marginBottom: 32,
-    "&:hover":{
+    "&:hover": {
       backgroundColor: "#ff5407 ",
-    }
+    },
   },
   size: {
     fontSize: 12,
@@ -215,7 +216,7 @@ export default function CenteredTabs() {
             alignItems="center"
             style={{ fontSize: 40 }}
           >
-            chart
+            <DoubleLineChart />
           </Grid>
         </Grid>
 
