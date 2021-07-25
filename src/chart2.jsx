@@ -33,7 +33,7 @@ export default class ChartBar extends Component {
   render() {
     return (
       <div>
-        <Bar ref="chart" options={options} data={data} height="280px"  />
+        <Bar ref="chart" options={options} data={data} height="290px"  />
       </div>
     );
   }

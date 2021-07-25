@@ -8,7 +8,7 @@ import ChartDoughnut from "../chart1";
 
 const useStyles = makeStyles({
   root: {
-    padding: 20,
+    padding: 25,
   },
 });
 
@@ -39,16 +39,16 @@ export default function Chart() {
           <h5 style={{color:"#071537"}}>Traffic</h5>
         </Grid>
         <Grid item container justify={"center"}>
-          <ChartDoughnut style={{ fontSize: 20 }} />
+          <ChartDoughnut  />
         </Grid>
         {data.map((item) => (
           <Grid
             item
             container
             alignItems="center"
-            justify="flex-start"
+            justify="center"
             lg={4}
-            style={{ fontWeight: "bold", fontSize: 33,color:"#071537" }}
+            style={{ fontWeight: "bold", fontSize: 33,color:"#071537"}}
           >
             {item.num}
             <Grid justify="center" style={{ fontWeight: 400, fontSize: 12, color: "#a3a3a3" }}>

@@ -14,6 +14,7 @@ import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import Avatar from "@material-ui/core/Avatar";
 import List from "@material-ui/core/List";
 import DoubleLineChart from "./../bigChart";
+import MyLine from "./../bigChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     // display: "flex",
     // backgroundColor:"gold",
     width: "100%",
-    padding: 20,
+    padding: 19,
   },
   tab: {
     width: "10",
@@ -29,9 +30,9 @@ const useStyles = makeStyles((theme) => ({
   color: {
     backgroundColor: "#ff5e15",
     color: "white",
-    padding: "7px 15px",
+    // padding: "7px 15px",
     textTransform: "capitalize",
-    padding: 16,
+    padding: 21,
     marginTop: 25,
     marginBottom: 32,
     "&:hover": {
@@ -216,7 +217,7 @@ export default function CenteredTabs() {
             alignItems="center"
             style={{ fontSize: 40 }}
           >
-            <DoubleLineChart />
+            <MyLine />
           </Grid>
         </Grid>
 
@@ -226,7 +227,7 @@ export default function CenteredTabs() {
             container
             justify="space-evenly"
             lg={3}
-            style={{ paddingTop: 20 }}
+            style={{ paddingTop: 20,borderRight:"1px solid #d8f0f0" }}
           >
             <Grid item alignItems="center" justify="flex-start">
               <Avatar className={item.color}>{item.icon}</Avatar>

@@ -11,17 +11,13 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-
 import HomeIcon from "@material-ui/icons/Home";
-
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
 import CreateIcon from "@material-ui/icons/Create";
-
 import MoodIcon from "@material-ui/icons/Mood";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PersonIcon from "@material-ui/icons/Person";
@@ -68,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    flexShrink: 2,
   },
   drawerPaper: {
     width: drawerWidth,
@@ -79,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
-    justifyContent: "flex-end",
+    justifyContent: "center",
   },
 }));
 
@@ -215,7 +211,7 @@ export default function PersistentDrawerLeft() {
               icon: <PostAddIcon style={{ fontSize: 15 }} />,
             },
           ].map((item) => (
-            <ListItem button key={item.title}>
+            <ListItem button style={{marginBottom:10}} key={item.title}>
               <ListItemIcon style={{ color: "#d1d1d1" }}>
                 {item.icon}
               </ListItemIcon>

@@ -9,13 +9,14 @@ import ChartBar2 from "./../chart3";
 import LineDemo from "./../chart";
 import ChartBar from "./../chart2";
 import NativeSelects from "./selectComp/select";
+import Filter from "./selectComp/select";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     "& > *": {
       margin: theme.spacing(1),
-      width: theme.spacing(38),
+      width: theme.spacing(43.6),
       height: theme.spacing(25),
     },
   },
@@ -61,7 +62,7 @@ export default function Variants() {
           justify={"space-between"}
           // style={{ paddingTop: 20 }}
         >
-          <Grid item lg={8} alignItems={"center"} style={{paddingRight:"70px"}}>
+          <Grid item lg={8} alignItems={"center"} style={{paddingRight:"100px"}}>
             <ChartBar  />
           </Grid>
           <Grid
@@ -130,7 +131,7 @@ export default function Variants() {
           </Grid>
           <Grid item container style={{marginTop:22}}>
             <Grid item alignItems="center" justify="flex-start" lg={6}>
-              <NativeSelects />
+              <Filter />
             </Grid>
             <Grid item alignItems="flex-end" justify="flex-start" lg={6}>
               <LineChart />
@@ -153,7 +154,7 @@ export default function Variants() {
           justify={"space-between"}
           // style={{ paddingTop: 20 }}
         >
-          <Grid item lg={8} alignItems={"center"} style={{paddingRight:"70px"}}>
+          <Grid item lg={8} alignItems={"center"} style={{paddingRight:"100px"}}>
             <ChartBar2 />
           </Grid>
           <Grid

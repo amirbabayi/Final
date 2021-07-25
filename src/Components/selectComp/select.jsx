@@ -8,19 +8,23 @@ import NativeSelect from "@material-ui/core/NativeSelect";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    minWidth: 70,
+    minWidth: 110,
+    minHeight:20,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
   select: {
     backgroundColor: "white",
-    border: "1px solid white  ",
-    width: "10",
+    border: "none",
+    '&:hover':{
+      backgroundColor:"white"
+    }
   },
   input: {
     border: "none",
   },
+
 }));
 
 export default function NativeSelects() {
@@ -43,6 +47,7 @@ export default function NativeSelects() {
       <FormControl variant="filled" className={classes.formControl}>
         <InputLabel htmlFor="name-native-disabled">Monthly</InputLabel>
         <Select
+            disableUnderline
           native
           onChange={handleChange}
           label="Age"
@@ -54,11 +59,39 @@ export default function NativeSelects() {
           }}
         >
           <option aria-label="None" value="" />
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
+          <option value={10}>Daily</option>
+          <option value={10}>Weekly</option>
+          <option value={20}>Monthly</option>
+          <option value={30}>Yearly</option>
         </Select>
       </FormControl>
     </div>
   );
 }
+
+
+// /* eslint-disable no-use-before-define */
+// /* eslint-disable no-use-before-define */
+// import React from 'react';
+// import TextField from '@material-ui/core/TextField';
+// import Autocomplete from '@material-ui/lab/Autocomplete';
+//
+// export default function Filter() {
+//   return (
+//       <Autocomplete
+//           // id="combo-box-demo"
+//           // options={top100Films}
+//           // getOptionLabel={(option) => option.title}
+//           style={{ width: 72,backgroundColor:"white",border:"none" }}
+//           renderInput={(params) => <TextField {...params} label="Search" variant="outlined" />}
+//       />
+//   );
+// }
+//
+// // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
+// // const top100Films = [
+// //   { title: 'The Shawshank Redemption', year: 1994 },
+// //   { title: 'The Godfather', year: 1972 },
+// //   { title: 'The Godfather: Part II', year: 1974 },
+// //   { title: 'The Dark Knight', year: 2008 },
+// ]

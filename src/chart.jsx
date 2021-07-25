@@ -11,7 +11,7 @@ const data = {
       label: "",
       fill: true,
       //   lineTension: 0.1, kham
-      backgroundColor: "rgba(255, 198, 0,0.3)",
+      backgroundColor: "rgba(255, 198, 0,0.2)",
       borderColor: "rgba(255, 198, 4)",
       pointRadius: 0,
       borderWidth: 2,
@@ -36,7 +36,7 @@ export default class LineDemo extends Component {
   render() {
     return (
       <Grid item>
-        <Line ref="chart" options={options} data={data}  width="304px" height="105px" />
+        <Line ref="chart" options={options} data={data}  width="347px" height="105px" />
       </Grid>
     );
   }
