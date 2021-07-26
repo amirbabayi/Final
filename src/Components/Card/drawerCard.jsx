@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom"
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -31,7 +30,7 @@ import PostAddIcon from "@material-ui/icons/PostAdd";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
-import pic from "./img/PicsArt_04-29-11.21.06.jpg";
+import pic from "../img/PicsArt_04-29-11.21.06.jpg";
 
 import NotificationsIcon from "@material-ui/icons/Notifications";
 

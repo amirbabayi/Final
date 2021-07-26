@@ -4,10 +4,9 @@ import {Link} from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 import {makeStyles} from "@material-ui/core/styles";
-import {blue, green} from "@material-ui/core/colors";
 
 const useStyles = makeStyles({
-    color: {
+    data: {
         marginTop: 10
     },
 
@@ -25,7 +24,7 @@ export default function PaginationLink() {
                         <Pagination
                             page={page}
                             size={"small"}
-                            className={classes.color}
+                            className={classes.data}
                             count={6}
                             renderItem={(item) => (
                                 <PaginationItem

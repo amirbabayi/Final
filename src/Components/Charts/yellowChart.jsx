@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import { Line } from "react-chartjs-2";
 
 import Grid from "@material-ui/core/Grid";
@@ -10,7 +9,6 @@ const data = {
     {
       label: "",
       fill: true,
-      //   lineTension: 0.1, kham
       backgroundColor: "rgba(255, 198, 0,0.2)",
       borderColor: "rgba(255, 198, 4)",
       pointRadius: 0,
@@ -35,14 +33,9 @@ const options = {
 export default class LineDemo extends Component {
   render() {
     return (
-      <Grid item>
-        <Line ref="chart" options={options} data={data}  width="347px" height="105px" />
-      </Grid>
+        <Grid item>
+          <Line ref="chart" options={options} data={data} width="346%" height="105vh"/>
+        </Grid>
     );
   }
-
-  //   componentDidMount() {
-  //     const { datasets } = this.refs.chart.chartInstance.data
-  //     console.log(datasets[0].data);
-  //   }
 }

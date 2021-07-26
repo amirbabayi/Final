@@ -1,15 +1,12 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-// import ArrowUpwardSharpIcon from "@material-ui/icons/ArrowUpwardSharp";
-// import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import LineChart from "./../chart4";
-import ChartBar2 from "./../chart3";
-import LineDemo from "./../chart";
-import ChartBar from "./../chart2";
-import NativeSelects from "./selectComp/select";
-import Filter from "./selectComp/select";
+import LineChart from "../Charts/redChart";
+import ChartBar2 from "../Charts/purpleChart";
+import LineDemo from "../Charts/yellowChart";
+import ChartBar from "../Charts/blueChart";
+import Filter from "../selectComp/select";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,7 +43,7 @@ export default function Variants() {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.root}>
+    <Grid container  justify={"center"} className={classes.root}>
       <Paper elevation={0} className={classes.blue}>
         <Grid
           item
@@ -62,12 +59,13 @@ export default function Variants() {
           justify={"space-between"}
           // style={{ paddingTop: 20 }}
         >
-          <Grid item lg={8} alignItems={"center"} style={{paddingRight:"100px"}}>
+          <Grid item lg={8} xs={8} alignItems={"center"} style={{paddingRight:"100px"}}>
             <ChartBar  />
           </Grid>
           <Grid
             item
             lg={4}
+            xs={4}
             alignItems={"center"}
             justify={"flex-end"}
             style={{
@@ -76,7 +74,6 @@ export default function Variants() {
               color: "#11a7ed",
             }}
           >
-            {/* <ArrowUpwardSharpIcon style={{ fontSize: 40 }} /> */}
             <p>$432</p>
             <p style={{ fontSize: 12, color: "#595959" }}>Jan 01-Jan 10</p>
           </Grid>
@@ -91,6 +88,7 @@ export default function Variants() {
             <Grid
               item
               lg={6}
+              xs={6}
               alignItems={"center"}
               justify={"flex-end"}
               style={{
@@ -99,7 +97,6 @@ export default function Variants() {
                 fontWeight: "bold",
               }}
             >
-              {/* <ArrowUpwardSharpIcon style={{ fontSize: 40 }} /> */}
               $432
             </Grid>
           </Grid>
@@ -117,6 +114,7 @@ export default function Variants() {
             <Grid
               item
               lg={6}
+              xs={6}
               alignItems={"center"}
               justify={"flex-end"}
               style={{
@@ -130,10 +128,10 @@ export default function Variants() {
             </Grid>
           </Grid>
           <Grid item container style={{marginTop:22}}>
-            <Grid item alignItems="center" justify="flex-start" lg={6}>
+            <Grid item alignItems="center" justify="flex-start" lg={6} xs={6}>
               <Filter />
             </Grid>
-            <Grid item alignItems="flex-end" justify="flex-start" lg={6}>
+            <Grid item alignItems="flex-end" justify="flex-start" lg={6} xs={6}>
               <LineChart />
             </Grid>
           </Grid>
@@ -145,7 +143,7 @@ export default function Variants() {
           container
           style={{ fontSize: 16, paddingBottom: 40, color: "#071537" }}
         >
-          Revinue Status
+          Revenue Status
         </Grid>
         <Grid
           item
@@ -154,12 +152,13 @@ export default function Variants() {
           justify={"space-between"}
           // style={{ paddingTop: 20 }}
         >
-          <Grid item lg={8} alignItems={"center"} style={{paddingRight:"100px"}}>
+          <Grid item lg={8} xs={8} alignItems={"center"} style={{paddingRight:"100px"}}>
             <ChartBar2 />
           </Grid>
           <Grid
             item
             lg={4}
+            xs={4}
             alignItems={"center"}
             justify={"flex-end"}
             style={{

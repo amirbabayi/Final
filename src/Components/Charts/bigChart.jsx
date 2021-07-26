@@ -1,5 +1,7 @@
-import React, {Component} from "react";
+import React, {useEffect, useState} from "react";
 import {Line} from "react-chartjs-2";
+import {makeStyles} from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
 const lineChartData = {
     data: {
@@ -34,7 +36,7 @@ const lineChartData = {
         ,
     },
     options: {
-
+        maintainAspectRatio:false,
         plugins: {
             legend: {
                 display: false,
@@ -63,17 +65,19 @@ const lineChartData = {
     },
 };
 
-export default class DoubleLineChart extends Component {
-    render() {
-        return (
-            <div>
-                <Line
-                    data={lineChartData.data}
-                    options={lineChartData.options}
-                    height={260}
-                    width={600}
-                />
-            </div>
-        );
-    }
+
+
+export const DoubleLineChart = () => {
+
+return (
+    <Grid container item justify={"center"} alignItems={"center"} lg={12} md={12} sm={10} >
+        <Line
+            data={lineChartData.data}
+            options={lineChartData.options}
+            height={284}
+        />
+    </Grid>
+)
 }
+
+
