@@ -37,20 +37,40 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 
-const useStyles = makeStyles({
+// const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
+
     table: {
         // backgroundColor:'gold'
-        width:"100%"
+        width: "100%",
+        overflow: "auto"
     },
     color: {
         backgroundColor: "#ff5e15",
         color: "white",
         padding: "7px 15px",
+        justifyContent: "center",
         textTransform: "capitalize",
         "&:hover": {
             backgroundColor: "#ff5407 ",
+        },
+
+        [theme.breakpoints.down('xs')]: {
+            marginBottom: 10,
+            width: "100%"
         }
 
+
+    },
+    input: {
+        backgroundColor: "#ebf5f5",
+        padding: "5px 0 5px 25px",
+        fontSize: 14,
+        borderRadius: 3,
+        [theme.breakpoints.down('xs')]: {
+            marginTop: 10,
+            width: "84%"
+        }
     },
     colorButton: {
         backgroundColor: "#ebf5f5",
@@ -58,6 +78,10 @@ const useStyles = makeStyles({
         padding: "10px 0",
         "&:hover": {
             backgroundColor: "#dfffff ",
+        },
+        [theme.breakpoints.down('xs')]: {
+            marginTop: 10,
+            width: "84%"
         }
     },
     tomato: {
@@ -81,7 +105,7 @@ const useStyles = makeStyles({
             backgroundColor: "#46adff ",
         }
     },
-});
+}));
 
 export default function CustomizedTables() {
     const classes = useStyles();
@@ -163,14 +187,14 @@ export default function CustomizedTables() {
                             sm={7}
                             xs={12}
                         >
-                            <Grid container item lg={2} md={2} sm={3} xs={12}>
+                            <Grid container item lg={2} md={2} sm={3} xs={10}>
                                 <Button variant="contained" className={classes.color} size="small">
-                                    <AddCircleIcon style={{fontSize: 14}}/>
-                                    <p style={{fontSize: 14}}>Add</p>
+                                    <AddCircleIcon style={{fontSize: 14, marginRight: 5}}/>
+                                    <p style={{fontSize: 14}}> Add </p>
                                 </Button>
                             </Grid>
                             {icon.map((item) => (
-                                <Grid container item lg={2} md={2} sm={3} xs={4}>
+                                <Grid container justify={"flex-start"} item lg={2} md={2} sm={3} xs={12}>
                                     <Button
                                         className={classes.colorButton}
                                         color="default"
@@ -181,60 +205,58 @@ export default function CustomizedTables() {
                                 </Grid>
                             ))}
                         </Grid>
-                        <Grid item container justify={"center"} alignItems="center" lg={5} md={4} sm={5} xs={12}>
-                            <Grid container item lg={8} md={10} sm={10} xs={11}>
+                        <Grid item container justify={"center"} alignItems="center" lg={5} md={4} sm={5}
+                              xs={12}>
+                            <Grid container item lg={8} md={10} sm={10} xs={12}>
                                 <InputBase
                                     placeholder="Search"
-                                    style={{
-                                        backgroundColor: "#ebf5f5",
-                                        padding: "5px 0 5px 25px",
-                                        fontSize: 14,
-                                        borderRadius: 3,
-                                    }}
+                                    className={classes.input}
                                 />
                             </Grid>
-                            <Grid container item lg={1} md={2} sm={2} xs={1}>
+                            <Grid container item lg={1} md={2} sm={2} xs={12}>
                                 <Button className={classes.colorButton} color="default">
                                     <DescriptionIcon fontSize="small"/>
                                 </Button>
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item container justify={"center"}  style={{marginTop: 10}}>
-                        <Table responsive className={classes.table}>
-                            <TableHead>
-                                <TableRow>
-                                    <StyledTableCell>INVOICE</StyledTableCell>
-                                    <StyledTableCell align="left">COSTUMERS</StyledTableCell>
-                                    <StyledTableCell align="left">FORMS</StyledTableCell>
-                                    <StyledTableCell align="left">PRICE</StyledTableCell>
-                                    <StyledTableCell align="left">STATUS</StyledTableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {data.map((row) => (
-                                    <StyledTableRow key={row.name}>
-                                        <StyledTableCell component="th" scope="row">
-                                            {row.name}
-                                        </StyledTableCell>
-                                        <StyledTableCell align="left">{row.calories}</StyledTableCell>
-                                        <StyledTableCell align="left">{row.fat}</StyledTableCell>
-                                        <StyledTableCell align="left">{row.carbs}</StyledTableCell>
-                                        <StyledTableCell align="left">
-                                            <Button
-                                                size="small"
-                                                variant="contained"
-                                                color="primary"
-                                                className={row.color}
-                                                style={{textTransform: "none"}}
-                                            >
-                                                {row.protein}
-                                            </Button>
-                                        </StyledTableCell>
-                                    </StyledTableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
+                    <Grid item container justify={"center"} style={{marginTop: 10}}>
+                        <Paper className={classes.table}>
+                            <Table responsive>
+                                <TableHead>
+                                    <TableRow>
+                                        <StyledTableCell>INVOICE</StyledTableCell>
+                                        <StyledTableCell align="left">COSTUMERS</StyledTableCell>
+                                        <StyledTableCell align="left">FORMS</StyledTableCell>
+                                        <StyledTableCell align="left">PRICE</StyledTableCell>
+                                        <StyledTableCell align="left">STATUS</StyledTableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {data.map((row) => (
+                                        <StyledTableRow key={row.name}>
+                                            <StyledTableCell component="th" scope="row">
+                                                {row.name}
+                                            </StyledTableCell>
+                                            <StyledTableCell align="left">{row.calories}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.fat}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.carbs}</StyledTableCell>
+                                            <StyledTableCell align="left">
+                                                <Button
+                                                    size="small"
+                                                    variant="contained"
+                                                    color="primary"
+                                                    className={row.color}
+                                                    style={{textTransform: "none"}}
+                                                >
+                                                    {row.protein}
+                                                </Button>
+                                            </StyledTableCell>
+                                        </StyledTableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </Paper>
                     </Grid>
                     <Grid item container alignItems="center" justify="space-between">
                         <Grid item alignItems="center" lg={6} md={6} sm={6} xs={10}>
