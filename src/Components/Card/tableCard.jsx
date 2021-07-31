@@ -1,5 +1,5 @@
 import React from "react";
-import {withStyles, makeStyles} from "@material-ui/core/styles";
+import {makeStyles, withStyles} from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Button from "@material-ui/core/Button";
-import {green, blue} from "@material-ui/core/colors";
+import {blue, green} from "@material-ui/core/colors";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -39,7 +39,8 @@ const StyledTableRow = withStyles((theme) => ({
 
 const useStyles = makeStyles({
     table: {
-        width: 900,
+        // backgroundColor:'gold'
+        width:"100%"
     },
     color: {
         backgroundColor: "#ff5e15",
@@ -140,8 +141,8 @@ export default function CustomizedTables() {
         },
     ];
     return (
-        <Paper>
-            <Grid container>
+        <Grid container item justify={"center"} alignItems={"center"} sm={10} xs={11}>
+            <Grid container item justify={"center"}>
                 <TableContainer style={{backgroundColor: "white", padding: 25}}>
                     <Grid item container style={{marginBottom: 10}}>
                         <Typography>
@@ -158,16 +159,18 @@ export default function CustomizedTables() {
                             justify={"flex-start"}
                             alignItems="center"
                             lg={7}
-                            md={7}
+                            md={8}
+                            sm={7}
+                            xs={12}
                         >
-                            <Grid container item lg={2} md={2}>
+                            <Grid container item lg={2} md={2} sm={3} xs={12}>
                                 <Button variant="contained" className={classes.color} size="small">
                                     <AddCircleIcon style={{fontSize: 14}}/>
                                     <p style={{fontSize: 14}}>Add</p>
                                 </Button>
                             </Grid>
                             {icon.map((item) => (
-                                <Grid container item lg={2} md={2}>
+                                <Grid container item lg={2} md={2} sm={3} xs={4}>
                                     <Button
                                         className={classes.colorButton}
                                         color="default"
@@ -178,8 +181,8 @@ export default function CustomizedTables() {
                                 </Grid>
                             ))}
                         </Grid>
-                        <Grid item container justify={"flex-end"} alignItems="center" lg={5} md={5}>
-                            <Grid container item lg={7} md={7}>
+                        <Grid item container justify={"center"} alignItems="center" lg={5} md={4} sm={5} xs={12}>
+                            <Grid container item lg={8} md={10} sm={10} xs={11}>
                                 <InputBase
                                     placeholder="Search"
                                     style={{
@@ -190,15 +193,15 @@ export default function CustomizedTables() {
                                     }}
                                 />
                             </Grid>
-                            <Grid container item lg={2} md={2}>
+                            <Grid container item lg={1} md={2} sm={2} xs={1}>
                                 <Button className={classes.colorButton} color="default">
                                     <DescriptionIcon fontSize="small"/>
                                 </Button>
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item container justify={"flex-end"} style={{marginTop: 10}}>
-                        <Table className={classes.table} aria-label="customized table">
+                    <Grid item container justify={"center"}  style={{marginTop: 10}}>
+                        <Table responsive className={classes.table}>
                             <TableHead>
                                 <TableRow>
                                     <StyledTableCell>INVOICE</StyledTableCell>
@@ -234,19 +237,19 @@ export default function CustomizedTables() {
                         </Table>
                     </Grid>
                     <Grid item container alignItems="center" justify="space-between">
-                        <Grid item alignItems="center" lg={9}>
+                        <Grid item alignItems="center" lg={6} md={6} sm={6} xs={10}>
                             <Typography>
                                 <p style={{fontSize: 12, color: "#a3a3a3", marginTop: 10}}>
                                     Showing 1 to 20 of 20 entries
                                 </p>
                             </Typography>
                         </Grid>
-                        <Grid item alignItems="center" lg={3}>
+                        <Grid item alignItems="center" lg={3} md={4} sm={6} xs={12}>
                             <PaginationLink/>
                         </Grid>
                     </Grid>
                 </TableContainer>
             </Grid>
-        </Paper>
+        </Grid>
     );
 }

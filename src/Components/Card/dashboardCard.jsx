@@ -142,7 +142,7 @@ export default function CenteredTabs() {
     return (
         <Paper className={classes.root}>
             <Grid container>
-                <Grid item container lg={2} md={2} sm={2} xs={5} alignItems="center">
+                <Grid item container lg={2} md={2} sm={2} xs={7} alignItems="center">
                     <p style={{fontSize: 14, fontWeight: 600, color: "#071537"}}>
                         Dashboard
                     </p>
@@ -150,7 +150,7 @@ export default function CenteredTabs() {
                         OverView Of Latest Month
                     </p>
                 </Grid>
-                <Grid item container lg={8} md={8} sm={8} xs={8} justify={"center"}>
+                <Grid item container lg={8} md={10} sm={10} xs={12} justify={"center"} style={{marginBottom:10}}>
                     <Tabs
                         value={value}
                         onChange={handleChange}
@@ -162,7 +162,7 @@ export default function CenteredTabs() {
                         ))}
                     </Tabs>
                 </Grid>
-                <Grid item container lg={2} md={2} sm={2} xs={4} alignItems="center">
+                <Grid item container lg={2} md={12} sm={12} xs={12} justify={"flex-end"} alignItems="center">
                     {data.map((item) => (
                         <Grid
                             item
@@ -179,24 +179,27 @@ export default function CenteredTabs() {
                     ))}
                 </Grid>
                 <Grid item container>
-                    <Grid item lg={3} md={3} sm={4} xs={12}>
+                    <Grid  item lg={3} md={3} sm={4} xs={12}>
                         {node.map((item) => (
                             <Grid
+                                container
                                 item
                                 style={{
                                     fontSize: 28,
                                     fontWeight: 600,
                                     paddingTop: 25,
                                     color: "#071537",
+
                                 }}
+                                xs={10}
                             >
                                 {item.num}
-                                <Grid item style={{fontSize: 11, color: "#a3a3a3"}}>
+                                <Grid container item style={{fontSize: 11, color: "#a3a3a3"}}>
                                     {item.note}
                                 </Grid>
                             </Grid>
                         ))}
-                        <Grid item>
+                        <Grid container item >
                             <Button
                                 variant="contained"
                                 className={classes.color}
@@ -213,7 +216,7 @@ export default function CenteredTabs() {
                         lg={9}
                         md={9}
                         sm={8}
-                        xs={9}
+                        xs={12}
                         alignItems="center"
                     >
                         <DoubleLineChart/>
@@ -227,9 +230,9 @@ export default function CenteredTabs() {
                         justify="space-evenly"
                         lg={3}
                         md={3}
-                        sm={6}
+                        sm={3}
                         xs={6}
-                        style={{paddingTop: 20, borderRight: "1px solid #d8f0f0"}}
+                        style={{paddingTop: 20}}
                     >
                         <Grid item alignItems="center" justify="flex-start">
                             <Avatar className={item.color}>{item.icon}</Avatar>

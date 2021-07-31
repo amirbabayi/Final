@@ -7,7 +7,8 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
     data: {
-        marginTop: 10
+        marginTop: 10,
+        fontSize:"15px"
     },
 
 });
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
 export default function PaginationLink() {
     const classes = useStyles();
     return (
-        <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
+        <MemoryRouter initialEntries={['/inbox']} initialIndex={7}>
             <Route>
                 {({location}) => {
                     const query = new URLSearchParams(location.search);
@@ -25,7 +26,7 @@ export default function PaginationLink() {
                             page={page}
                             size={"small"}
                             className={classes.data}
-                            count={6}
+                            count={5}
                             renderItem={(item) => (
                                 <PaginationItem
                                     component={Link}

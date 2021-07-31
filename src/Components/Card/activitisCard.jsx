@@ -16,9 +16,7 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         maxWidth: 420,
         backgroundColor: theme.palette.background.paper,
-        padding: 30,
-        // padding: 30,
-        // margin: 20,
+        padding: 20,
     },
 
     pink: {
@@ -98,28 +96,30 @@ export default function FolderList() {
     return (
         <Paper>
             <List className={classes.root}>
-                <h5 style={{color: "black"}}>Recente Activitis</h5>
+                <h5 style={{color: "black", marginBottom: 20}}>Recent Activities</h5>
                 {data.map((item) => (
                     <Grid container justify='space-evenly' style={{marginBottom: 40,}}>
-                        <Grid item container alignItems="center" justify='flex-start' lg={4} md={4}
-                              style={{color: "#a3a3a3", fontSize: 12}}>
+                        <Grid item container alignItems="center" justify='flex-start' lg={4} md={4} sm={4} xs={12}
+                              style={{color: "#a3a3a3", fontSize: 12, paddingBottom: 20}}>
                             {item.date}
                         </Grid>
-                        <Grid item container alignItems="center" justify='flex-start' lg={2} md={2}>
+                        <Grid item container alignItems="center" justify='flex-start' lg={2} md={2} sm={2} xs={2}>
                             <Avatar className={item.color}>{item.icon}</Avatar>
                         </Grid>
-                        <Grid item container alignItems="center" justify='flex-start' lg={6} md={6}
-                              style={{fontWeight: 600, fontSize: 16, color: "black"}}>
-                            {item.title}
-                            <div style={{
+                        <Grid item container alignItems="center" justify='flex-start' lg={6} md={6} sm={6} xs={9}
+                              style={{fontWeight: 600, fontSize: 14, color: "black"}}>
+                            <Grid container item >
+                                {item.title}
+                            </Grid>
+                            <Grid container item style={{
                                 textAlign: "center",
                                 fontWeight: 400,
                                 fontSize: 12,
                                 paddingTop: 10,
-                                color: "#a3a3a3"
+                                color: "#a3a3a3",
                             }}>
                                 {item.note}
-                            </div>
+                            </Grid>
                         </Grid>
                     </Grid>
                 ))}

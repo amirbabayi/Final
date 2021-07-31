@@ -49,8 +49,8 @@ export default function Chart() {
                         lg={4}
                         md={4}
                         sm={4}
-                        xs={6}
-                        style={{fontWeight: "bold", fontSize: 33, color: "#071537"}}
+                        xs={11}
+                        style={{fontWeight: "bold", fontSize: 33, color: "#071537",paddingBottom:10}}
                     >
                         {item.num}
                         <Grid container item justify="center" style={{fontWeight: 400, fontSize: 12, color: "#a3a3a3"}}>

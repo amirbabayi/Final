@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   yellow: {
     border: "2px solid #ffe9bd",
     backgroundColor: "#fff6d1",
-    padding: 20,
+    // padding: 20,
   },
   tomato: {
     border: "2px solid #ffcabd",
@@ -50,14 +50,13 @@ export default function Variants() {
           container
           style={{ fontSize: 16, paddingBottom: 40, color: "#071537" }}
         >
-          Revinue Status
+          Revenue Status
         </Grid>
         <Grid
           item
           container
           alignItems={"flex-end"}
           justify={"space-between"}
-          // style={{ paddingTop: 20 }}
         >
           <Grid item lg={8} xs={8} alignItems={"center"} style={{paddingRight:"100px"}}>
             <ChartBar  />
@@ -80,9 +79,9 @@ export default function Variants() {
         </Grid>
       </Paper>
       <Paper elevation={0} className={classes.yellow}>
-        <Grid container>
-          <Grid container>
-            <Grid item container style={{ fontSize: 16, color: "#071537" }}>
+        <Grid container justify={"center"} alignItems={"center"} >
+          <Grid container >
+            <Grid item container style={{ fontSize: 16, color: "#071537",padding:"20px 0 0 20px" }}>
               Page View
             </Grid>
             <Grid
@@ -95,12 +94,13 @@ export default function Variants() {
                 fontSize: 36,
                 color: "#ffc604",
                 fontWeight: "bold",
+                paddingLeft:20,
               }}
             >
               $432
             </Grid>
           </Grid>
-          <Grid item container justify="center">
+          <Grid item container justify="center" lg={12} md={12} sm={12} xs={12} >
             <LineDemo />
           </Grid>
         </Grid>
@@ -123,7 +123,6 @@ export default function Variants() {
                 fontWeight: "bold",
               }}
             >
-              {/* <ArrowUpwardSharpIcon style={{ fontSize: 40 }} /> */}
               $432
             </Grid>
           </Grid>
@@ -150,7 +149,6 @@ export default function Variants() {
           container
           alignItems={"flex-end"}
           justify={"space-between"}
-          // style={{ paddingTop: 20 }}
         >
           <Grid item lg={8} xs={8} alignItems={"center"} style={{paddingRight:"100px"}}>
             <ChartBar2 />
