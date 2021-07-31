@@ -259,14 +259,14 @@ export default function CustomizedTables() {
                         </Paper>
                     </Grid>
                     <Grid item container alignItems="center" justify="space-between">
-                        <Grid item alignItems="center" lg={6} md={6} sm={6} xs={10}>
+                        <Grid item alignItems="center" lg={8} md={6} sm={6} xs={10}>
                             <Typography>
                                 <p style={{fontSize: 12, color: "#a3a3a3", marginTop: 10}}>
                                     Showing 1 to 20 of 20 entries
                                 </p>
                             </Typography>
                         </Grid>
-                        <Grid item alignItems="center" lg={3} md={4} sm={6} xs={12}>
+                        <Grid item alignItems="center" lg={4} md={4} sm={6} xs={12}>
                             <PaginationLink/>
                         </Grid>
                     </Grid>
