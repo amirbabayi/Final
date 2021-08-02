@@ -2,35 +2,23 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import ChartDoughnut from "../Charts/doghnutChart";
+import {dataProps} from "../../data/doughnutData";
 
 const useStyles = makeStyles({
     root: {
         padding: 25,
     },
+    number: {
+        fontWeight: "bold", fontSize: 33, color: "#071537", paddingBottom: 10
+    },
+    iconNote: {
+        fontWeight: 400, fontSize: 12, color: "#a3a3a3"
+    }
 });
 
 export default function Chart() {
     const classes = useStyles();
-    const data = [
-        {
-            num: "34%",
-            note: "Facebook",
-            icon: <FiberManualRecordIcon style={{fontSize: 13, color: "#23a1ff"}}/>,
-        },
-        {
-            num: "55%",
-            note: "Youtube",
-            icon: <FiberManualRecordIcon style={{fontSize: 13, color: "#ff5f16"}}/>,
-        },
-        {
-            num: "11%",
-            note: "Direct Search",
-            icon: <FiberManualRecordIcon style={{fontSize: 13, color: "#ffc700"}}/>,
-        },
-    ];
-
     return (
         <Paper className={classes.root}>
             <Grid container>
@@ -40,7 +28,7 @@ export default function Chart() {
                 <Grid item container justify={"center"}>
                     <ChartDoughnut/>
                 </Grid>
-                {data.map((item) => (
+                {dataProps['data'].map((item) => (
                     <Grid
                         item
                         container
@@ -50,10 +38,10 @@ export default function Chart() {
                         md={4}
                         sm={4}
                         xs={11}
-                        style={{fontWeight: "bold", fontSize: 33, color: "#071537",paddingBottom:10}}
+                        className={classes.number}
                     >
                         {item.num}
-                        <Grid container item justify="center" style={{fontWeight: 400, fontSize: 12, color: "#a3a3a3"}}>
+                        <Grid container item justify="center" className={classes.iconNote}>
                             {item.icon} {item.note}
                         </Grid>
                     </Grid>

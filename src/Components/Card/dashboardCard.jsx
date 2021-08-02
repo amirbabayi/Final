@@ -4,19 +4,13 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Grid from "@material-ui/core/Grid";
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import Button from "@material-ui/core/Button";
-import CakeIcon from "@material-ui/icons/Cake";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import LoyaltyIcon from "@material-ui/icons/Loyalty";
 import Avatar from "@material-ui/core/Avatar";
 import {DoubleLineChart} from "../Charts/bigChart";
+import {allData} from "../../data/dashboardData";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        // flexGrow: 1,
-        // display: "flex",
-        // backgroundColor:"gold",
         width: "100%",
         padding: 19,
     },
@@ -26,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     color: {
         backgroundColor: "#ff5e15",
         color: "white",
-        // padding: "7px 15px",
         textTransform: "capitalize",
         padding: 21,
         marginTop: 25,
@@ -35,105 +28,28 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: "#ff5407 ",
         },
     },
-    size: {
+    onlineStore: {
+        fontWeight: 400,
         fontSize: 12,
-        minWidth: 80,
+        color: "#a3a3a3",
+        paddingRight: 10,
     },
-    red: {
-        color: "white",
-        backgroundColor: "#f33926",
+    current: {
+        fontSize: 28,
+        fontWeight: 600,
+        paddingTop: 25,
+        color: "#071537",
     },
-    pink: {
-        color: "white",
-        backgroundColor: "#fd7397",
-    },
-    purple: {
-        color: "white",
-        backgroundColor: "#657adc",
-    },
-    green: {
-        color: "white",
-        backgroundColor: "#4ba23c",
-    },
-    indicator: {
-        color: "#f16321",
+    price: {
+        fontSize: 16,
+        fontWeight: 600,
+        color: "#071537",
     },
 }));
 
 export default function CenteredTabs() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-
-    const data = [
-        {
-            note: "Online",
-            icon: (
-                <FiberManualRecordIcon style={{fontSize: 13, color: "#21a2fd"}}/>
-            ),
-        },
-        {
-            note: "Store",
-            icon: (
-                <FiberManualRecordIcon style={{fontSize: 13, color: "#ff5e15"}}/>
-            ),
-        },
-    ];
-    const node = [
-        {
-            num: "$3468.96",
-            note: "Current Month Earning",
-        },
-        {
-            num: "82",
-            note: "Current Month Sales",
-        },
-    ];
-
-    const test = [
-        {
-            icon: <CakeIcon/>,
-            title: "Wallet Balance",
-            note: "$4,567.53",
-            color: [classes.red],
-        },
-        {
-            icon: <FavoriteIcon/>,
-            title: "Referral Earning",
-            note: "$1689.53",
-            color: [classes.purple],
-        },
-        {
-            icon: <LoyaltyIcon/>,
-            title: "Estimate Sales",
-            note: "$2851.53",
-            color: [classes.green],
-        },
-        {
-            icon: <CakeIcon/>,
-            title: "Earning",
-            note: "$52,567.53",
-            color: [classes.pink],
-        },
-    ];
-
-    const tab = [
-        {
-            label: "DAILY",
-            style: [classes.size],
-        },
-        {
-            label: "WEEKLY",
-            style: [classes.size],
-        },
-        {
-            label: "MONTHLY",
-            style: [classes.size],
-        },
-        {
-            label: "YEARLY",
-            style: [classes.size],
-        },
-    ];
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -150,56 +66,36 @@ export default function CenteredTabs() {
                         OverView Of Latest Month
                     </p>
                 </Grid>
-                <Grid item container lg={8} md={10} sm={10} xs={12} justify={"center"} style={{marginBottom:10}}>
+                <Grid item container lg={8} md={10} sm={10} xs={12} justify={"center"} style={{marginBottom: 10}}>
                     <Tabs
                         value={value}
                         onChange={handleChange}
                         indicatorColor="primary"
                         textColor="primary"
                     >
-                        {tab.map((item) => (
-                            <Tab label={item.label} className={item.style}/>
+                        {allData['tab'].map((item) => (
+                            <Tab label={item.label} style={item.style}/>
                         ))}
                     </Tabs>
                 </Grid>
                 <Grid item container lg={2} md={12} sm={12} xs={12} justify={"flex-end"} alignItems="center">
-                    {data.map((item) => (
-                        <Grid
-                            item
-                            justify={"center"}
-                            style={{
-                                fontWeight: 400,
-                                fontSize: 12,
-                                color: "#a3a3a3",
-                                paddingRight: 10,
-                            }}
-                        >
+                    {allData["data"].map((item) => (
+                        <Grid item justify={"center"} className={classes.onlineStore}>
                             {item.icon} {item.note}
                         </Grid>
                     ))}
                 </Grid>
                 <Grid item container>
-                    <Grid  item lg={3} md={3} sm={4} xs={12}>
-                        {node.map((item) => (
-                            <Grid
-                                container
-                                item
-                                style={{
-                                    fontSize: 28,
-                                    fontWeight: 600,
-                                    paddingTop: 25,
-                                    color: "#071537",
-
-                                }}
-                                xs={10}
-                            >
+                    <Grid item lg={3} md={3} sm={4} xs={12}>
+                        {allData['node'].map((item) => (
+                            <Grid container item xs={10} className={classes.current}>
                                 {item.num}
                                 <Grid container item style={{fontSize: 11, color: "#a3a3a3"}}>
                                     {item.note}
                                 </Grid>
                             </Grid>
                         ))}
-                        <Grid container item >
+                        <Grid container item>
                             <Button
                                 variant="contained"
                                 className={classes.color}
@@ -223,7 +119,7 @@ export default function CenteredTabs() {
                     </Grid>
                 </Grid>
 
-                {test.map((item) => (
+                {allData['test'].map((item) => (
                     <Grid
                         item
                         container
@@ -235,7 +131,7 @@ export default function CenteredTabs() {
                         style={{paddingTop: 20}}
                     >
                         <Grid item alignItems="center" justify="flex-start">
-                            <Avatar className={item.color}>{item.icon}</Avatar>
+                            <Avatar style={item.color}>{item.icon}</Avatar>
                         </Grid>
                         <Grid
                             item
@@ -244,13 +140,7 @@ export default function CenteredTabs() {
                             style={{fontSize: 11, color: "#a3a3a3"}}
                         >
                             {item.title}
-                            <div
-                                style={{
-                                    fontSize: 16,
-                                    fontWeight: 600,
-                                    color: "#071537",
-                                }}
-                            >
+                            <div className={classes.price}>
                                 {item.note}
                             </div>
                         </Grid>

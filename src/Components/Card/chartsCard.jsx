@@ -6,7 +6,7 @@ import LineChart from "../Charts/redChart";
 import ChartBar2 from "../Charts/purpleChart";
 import LineDemo from "../Charts/yellowChart";
 import ChartBar from "../Charts/blueChart";
-import Filter from "../selectComp/select";
+import Filter from "../../selectComp/select";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,6 +40,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#edd1ff",
         padding: 20,
     },
+    all: {
+        fontSize: 36,
+        fontWeight: "bold",
+    },
+    lastStyle: {
+        fontSize: 16, color: "#071537", padding: "20px 0 0 20px"
+    }
 }));
 
 export default function Variants() {
@@ -70,11 +77,8 @@ export default function Variants() {
                         xs={4}
                         alignItems={"center"}
                         justify={"flex-end"}
-                        style={{
-                            fontSize: 36,
-                            fontWeight: "bold",
-                            color: "#11a7ed",
-                        }}
+                        className={classes.all}
+                        style={{color: "#11a7ed",}}
                     >
                         <p>$432</p>
                         <p style={{fontSize: 12, color: "#595959"}}>Jan 01-Jan 10</p>
@@ -84,7 +88,7 @@ export default function Variants() {
             <Paper elevation={0} className={classes.yellow}>
                 <Grid container justify={"center"} alignItems={"center"}>
                     <Grid container>
-                        <Grid item container style={{fontSize: 16, color: "#071537", padding: "20px 0 0 20px"}}>
+                        <Grid item container className={classes.lastStyle}>
                             Page View
                         </Grid>
                         <Grid
@@ -93,12 +97,8 @@ export default function Variants() {
                             xs={6}
                             alignItems={"center"}
                             justify={"flex-end"}
-                            style={{
-                                fontSize: 36,
-                                color: "#ffc604",
-                                fontWeight: "bold",
-                                paddingLeft: 20,
-                            }}
+                            className={classes.all}
+                            style={{color: "#ffc604", paddingLeft: 20,}}
                         >
                             $432
                         </Grid>
@@ -120,11 +120,8 @@ export default function Variants() {
                             xs={6}
                             alignItems={"center"}
                             justify={"flex-end"}
-                            style={{
-                                fontSize: 36,
-                                color: "tomato",
-                                fontWeight: "bold",
-                            }}
+                            className={classes.all}
+                            style={{color: "tomato"}}
                         >
                             $432
                         </Grid>
@@ -162,11 +159,8 @@ export default function Variants() {
                         xs={4}
                         alignItems={"center"}
                         justify={"flex-end"}
-                        style={{
-                            fontSize: 36,
-                            fontWeight: "bold",
-                            color: "#9213fd",
-                        }}
+                        className={classes.all}
+                        style={{color: "#9213fd"}}
                     >
                         <p>$432</p>
                         <p style={{fontSize: 12, color: "#595959"}}>Jan 01-Jan 10</p>
